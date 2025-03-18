@@ -7,7 +7,9 @@ class TimingSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class EldLogSerializer(serializers.ModelSerializer):
-    timings = TimingSerializer()
+    timings = TimingSerializer(many=True, required=False)
+    
     class Meta:
         model = EldLog
         fields = '__all__'
+    

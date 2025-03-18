@@ -20,8 +20,8 @@ from rest_framework import routers
 from eld_log import views
 
 router = routers.DefaultRouter()
-router.register(r'eld_logs', views.EldLogViewSet, basename='eld_logs')
-router.register(r'timings', views.TimingViewSet, basename='timings')
+router.register(r'eldlogs', views.EldLogViewSet)
+router.register(r'timings', views.TimingViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

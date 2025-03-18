@@ -10,7 +10,7 @@ function App() {
   const { setTheme, theme } = useTheme()
 
   return (
-    <>
+    <div className='container'>
 
       <p>
         theme is {theme}
@@ -28,7 +28,7 @@ function App() {
         variant={count % 2 === 0 ? 'default' : 'secondary'}
         onClick={() => setCount((count) => count + 1)}>
         Click me</Button >
-    </>
+    </div>
   )
 }
 

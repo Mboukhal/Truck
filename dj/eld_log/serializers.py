@@ -13,3 +13,4 @@ class EldLogSerializer(serializers.ModelSerializer):
         model = EldLog
         fields = '__all__'
     
+    

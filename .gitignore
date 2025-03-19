@@ -1,3 +1,4 @@
-dj/eld_log/migrations/*
-dj/eld_log/__pycache__
+dj/**/migrations/0*
+dj/**/__pycache__
 dj/db.sqlite3
+.DS_Store

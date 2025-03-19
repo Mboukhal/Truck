@@ -27,8 +27,8 @@ class Timing(models.Model):
 class EldLog(models.Model):
     name_of_carrier = models.CharField(max_length=100)
     name_of_co_driver = models.CharField(max_length=100, null=True, blank=True)
-    main_soffice_address = models.CharField(max_length=100, null=True, blank=True)
-    date = models.DateField(default=date.today, blank=True, unique=True)
+    main_office_address = models.CharField(max_length=100, null=True, blank=True)
+    date = models.DateField(default=date.today, blank=True)
     total_miles_driving_today = models.PositiveIntegerField(null=True, blank=True)
     vehicle_number = models.PositiveIntegerField(null=True, blank=True)
     trailer_number = models.PositiveIntegerField(null=True, blank=True)

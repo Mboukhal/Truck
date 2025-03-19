@@ -20,12 +20,14 @@ from rest_framework import routers
 from eld_log import views
 
 router = routers.DefaultRouter()
-router.register(r'eldlogs', views.EldLogViewSet)
-router.register(r'timings', views.TimingViewSet)
+# router.register(r'edl', views.eldlog, basename='eldlog')
+router.register(r'timing', views.TimingViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/edl/', views.eldlog, name='eldlog'),
+    path('api/edl/<id>/', views.eldlog, name='eldlog'),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
     
 ]

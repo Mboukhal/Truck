@@ -7,8 +7,9 @@ import { Button } from "./ui/button"
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
 import { Input } from "./ui/input"
+import { ScrollText } from "lucide-react"
 
-const edlShematic = z.object({
+const eldShematic = z.object({
   name_of_carrier: z.string().min(3, "Name of carrier is too short").max(100, "Name of carrier is too long"),
   name_of_co_driver: z.string().optional(),
   main_office_address: z.string().optional(),
@@ -18,12 +19,12 @@ const edlShematic = z.object({
   trailer_number: z.number().optional().nullable(),
 })
 
-type T_From = z.infer<typeof edlShematic>
+type T_From = z.infer<typeof eldShematic>
 
 const CreateEdl = () => {
 
   const form = useForm<T_From>({
-    resolver: zodResolver(edlShematic),
+    resolver: zodResolver(eldShematic),
     defaultValues: {
       name_of_carrier: localStorage.getItem("user") || "",
       name_of_co_driver: "",
@@ -48,7 +49,7 @@ const CreateEdl = () => {
       data.append(key, value !== null ? String(value) : "")
     }
 
-    const res = await fetch("http://localhost:8000/api/edl/", {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_API}/eld/`, {
       method: "POST",
       body: data
     });
@@ -61,6 +62,7 @@ const CreateEdl = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button>
+          <ScrollText />
           Create Log
         </Button>
       </DialogTrigger>

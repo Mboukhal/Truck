@@ -2,3 +2,6 @@ dj/**/migrations/0*
 dj/**/__pycache__
 dj/db.sqlite3
 .DS_Store
+.DS_Store
+dj/db.sqlite3
+react/.env

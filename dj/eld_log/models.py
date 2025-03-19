@@ -32,7 +32,9 @@ class EldLog(models.Model):
     total_miles_driving_today = models.PositiveIntegerField(null=True, blank=True)
     vehicle_number = models.PositiveIntegerField(null=True, blank=True)
     trailer_number = models.PositiveIntegerField(null=True, blank=True)
+  
     driver_signature = models.ImageField(upload_to=file_location, null=False, blank=True)
+    time_line = models.ImageField(upload_to=file_location, null=False, blank=True)
   
     # timings = models.ManyToManyField(Timing, blank=True, related_name='eld_logs')
     
